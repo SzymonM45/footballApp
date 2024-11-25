@@ -1,4 +1,5 @@
 import { useGetPlayersQuery } from "./queries/useGetPlayersQuery"
+import { SinglePlayer } from "./SinglePlayer"
 
 export const Players = () => {
     const { data } = useGetPlayersQuery()
@@ -7,7 +8,7 @@ export const Players = () => {
         <>
         <h2>Players</h2>
         <ul>
-            {data?.map(player => <li key={player.id}>{player.name}{player.lastname}</li>)}
+            {data?.map(player => <SinglePlayer player={player} key={player.id}/>)}
         </ul>
 
         </>
