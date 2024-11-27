@@ -8,7 +8,7 @@ export const SinglePlayer = ({player}: SinglePlayerProps) => {
     return(
         <>
         <li>
-            <h2><strong>{player.name}{player.lastname}</strong></h2>
+            <h2><strong>{player.name}{player.lastname}  - {player.teamName || "Free" }</strong></h2>
         </li>
         </>
     )

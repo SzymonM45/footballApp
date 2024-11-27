@@ -3,4 +3,12 @@ export type PlayerEntity = {
     name: string;
     lastname: string;
     teamId: string;
+    teamName?: string;
+}
+
+export type TeamsEntity = {
+    "id": string;
+    "name": string;
+    "yearofcreation":string;
+    "city": string
 }
