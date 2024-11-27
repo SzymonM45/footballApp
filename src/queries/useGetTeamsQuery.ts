@@ -4,13 +4,13 @@ import { TeamsEntity } from "../types";
 
 export const useGetTeamsQuery = () => {
     const {apiGet} = useApi();
-    const { data } = useQuery<TeamsEntity[]>({
+    const { data, isFetching } = useQuery<TeamsEntity[]>({
         queryKey: ['teams'],
         queryFn: async () => {
             return apiGet<TeamsEntity[]>('teams')
         }
     }) 
     return {
-        data
+        data, isFetching
     }
 }
