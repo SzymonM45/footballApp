@@ -12,3 +12,5 @@ export type TeamsEntity = {
     "yearofcreation":string;
     "city": string
 }
+
+export type PlayerDto = Omit<PlayerEntity, 'id'>

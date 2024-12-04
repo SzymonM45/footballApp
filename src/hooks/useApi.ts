@@ -1,9 +1,13 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const useApi = () => {
-    const call = async<R>(url:string, method: 'GET'):Promise<R> => {
+    const call = async<R, P = Record<string, unknown>>(url:string, method: 'GET' | 'POST', payload?: P):Promise<R> => {
         const fetchConfig = {
-            method
+            method, 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: payload ? JSON.stringify(payload) : undefined,
         }
         try {
             const response = await fetch(`${API_URL}${url}`, fetchConfig);
@@ -20,11 +24,17 @@ export const useApi = () => {
             
         } 
 
-         }
+         };
+
+       
     const apiGet = async<R>(url:string) => {
         return await call<R>(url,'GET')
     }
+    const apiPost = async<R,P>(url: string, payload: P) => {
+        return await call<R, P>(url, 'POST', payload);
+     }
     return {
-        apiGet
+        apiGet, 
+        apiPost
     }
 }
