@@ -1,3 +1,4 @@
+import { AddPlayer } from "./AddPlayer";
 import { useGetPlayersQuery } from "./queries/useGetPlayersQuery"
 import { useGetTeamsQuery } from "./queries/useGetTeamsQuery";
 import { SinglePlayer } from "./SinglePlayer"
@@ -13,6 +14,7 @@ export const Players = () => {
     return(
         <>
         <h2>Players</h2>
+        <AddPlayer/>
         <ul>
             {players.map(player => {
                 const teamName = teamMap[player.teamId] || 'Free';

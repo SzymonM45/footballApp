@@ -1,22 +1,103 @@
 {
-    "players": [
-        {"id": "szm024", "name": "Szymon", "lastname": "Mac", "teamId": "1"},
-        {"id": "rl024", "name": "Robert", "lastname": "Lewy", "teamId": "2"},
-        {"id": "hbm024", "name": "Hanna", "lastname": "Bor", "teamId": "3"},
-        {"id": "tk024", "name": "Tomasz", "lastname": "Kraśnik", "teamId": "4"},
-        {"id": "ps024", "name": "Patryk", "lastname": "Skiba", "teamId": "1"},
-        {"id": "jt024", "name": "John", "lastname": "Travolta", "teamId": "2"},
-        {"id": "jn024", "name": "Jan", "lastname": "Nowak", "teamId": ""},
-        {"id": "pg024", "name": "Piotr", "lastname": "Gołębiowski", "teamId": ""}
-    ],
-   "teams": [
-    {"id": "1", "name": "Legia Warszawa", "yearofcreation": "1898", "city": "Warszawa"},
-    {"id": "2", "name": "Pogoń Siedlce", "yearofcreation": "1925", "city": "Siedlce"},
-    {"id": "3", "name": "Górnik Łęczna", "yearofcreation": "1998", "city": "Łęczna"},
-    {"id": "4", "name": "Motor Lublin", "yearofcreation": "1936", "city": "Lublin"}
-   ], 
-   "games": [
-    {"id": "m1", "matchdate": "2024-10-01", "title": "1 round", "place": "Warszawa", "duration": "90 minutes",  "idTeam1": "1", "idTeam2": "4", "goalsTeam1": 3, "goalsTeam2": 0}, 
-    {"id": "m2","matchdate": "2024-11-10", "title": "2 round", "place": "Łęczna", "duration": "90 minutes",  "idTeam1": "3", "idTeam2": "2", "goalsTeam1": 1, "goalsTeam2": 1}
-   ]
+  "players": [
+    {
+      "id": "szm024",
+      "name": "Szymon",
+      "lastname": "Mac",
+      "teamId": "1"
+    },
+    {
+      "id": "rl024",
+      "name": "Robert",
+      "lastname": "Lewy",
+      "teamId": "2"
+    },
+    {
+      "id": "hbm024",
+      "name": "Hanna",
+      "lastname": "Bor",
+      "teamId": "3"
+    },
+    {
+      "id": "tk024",
+      "name": "Tomasz",
+      "lastname": "Kraśnik",
+      "teamId": "4"
+    },
+    {
+      "id": "ps024",
+      "name": "Patryk",
+      "lastname": "Skiba",
+      "teamId": "1"
+    },
+    {
+      "id": "jt024",
+      "name": "John",
+      "lastname": "Travolta",
+      "teamId": "2"
+    },
+    {
+      "id": "jn024",
+      "name": "Jan",
+      "lastname": "Nowak",
+      "teamId": ""
+    },
+    {
+      "id": "pg024",
+      "name": "Piotr",
+      "lastname": "Gołębiowski",
+      "teamId": ""
+    }
+    
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "Legia Warszawa",
+      "yearofcreation": "1898",
+      "city": "Warszawa"
+    },
+    {
+      "id": "2",
+      "name": "Pogoń Siedlce",
+      "yearofcreation": "1925",
+      "city": "Siedlce"
+    },
+    {
+      "id": "3",
+      "name": "Górnik Łęczna",
+      "yearofcreation": "1998",
+      "city": "Łęczna"
+    },
+    {
+      "id": "4",
+      "name": "Motor Lublin",
+      "yearofcreation": "1936",
+      "city": "Lublin"
+    }
+  ],
+  "games": [
+    {
+      "id": "m1",
+      "matchdate": "2024-10-01",
+      "title": "1 round",
+      "place": "Warszawa",
+      "duration": "90 minutes",
+      "idTeam1": "1",
+      "idTeam2": "4",
+      "goalsTeam1": 3,
+      "goalsTeam2": 0
+    },
+    {
+      "id": "m2",
+      "matchdate": "2024-11-10",
+      "title": "2 round",
+      "place": "Łęczna",
+      "duration": "90 minutes",
+      "idTeam1": "3",
+      "idTeam2": "2",
+      "goalsTeam1": 1,
+      "goalsTeam2": 1
+    }
+  ]
 }
