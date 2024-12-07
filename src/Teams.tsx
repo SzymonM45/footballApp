@@ -1,3 +1,4 @@
+import { AddTeam } from "./AddTeam";
 import { useGetTeamsQuery } from "./queries/useGetTeamsQuery"
 import { SingleTeam } from "./SingleTeam";
 
@@ -9,6 +10,7 @@ export const Teams = () => {
     return(
         <>
         <h1>Teams</h1>
+        <AddTeam/>
         <ul>
             {data?.map(team => <SingleTeam team={team} key={team.id}/>)}
         </ul>
