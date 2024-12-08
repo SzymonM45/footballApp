@@ -2,13 +2,13 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useApi } from "../hooks/useApi"
 import { PlayerDto, PlayerEntity } from "../types"
 
-export const useUpdatePlayerMutation = (id: string) => {
+export const useUpdatePlayerMutation = () => {
     const {apiPut} = useApi()
     const queryClient = useQueryClient()
 
     const {mutate, isPending, error} = useMutation({
         mutationKey: ['players'],
-        mutationFn: async(payload: PlayerDto) => {
+        mutationFn: async({id, payload}: {id: string; payload: PlayerDto}) => {
             return apiPut<PlayerEntity, PlayerDto>(`players/${id}`,payload)
         },
         onSuccess: () => {
