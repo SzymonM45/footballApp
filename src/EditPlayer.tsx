@@ -8,7 +8,7 @@ type EditPlayerProps = {
 }
 
 export const EditPlayer = ({player, showEdit}: EditPlayerProps) => {
-    const {isPending, error, mutate: EditPlayer} = useUpdatePlayerMutation(player.id)
+    const {isPending, error, mutate: EditPlayer} = useUpdatePlayerMutation()
 
     const [values, setValues] = useState({
         name: player.name,
@@ -31,9 +31,12 @@ export const EditPlayer = ({player, showEdit}: EditPlayerProps) => {
         e.preventDefault()
 
         EditPlayer({
+            id: player.id,
+            payload: {
             name: values.name,
             lastname: values.lastname,
             teamId: values.teamId
+            }
         })
 
     }
