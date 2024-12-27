@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useGetPlayersQuery } from "./queries/useGetPlayersQuery";
 import { useUpdatePlayerMutation } from "./queries/useUpdatePlayerMutation";
 import { TeamsEntity } from "./types"
+import { EditPlayer } from "./EditPlayer";
+import { EditTeam } from "./EditTeam";
 
 type SingleTeamProps = {
     team: TeamsEntity;
@@ -12,6 +14,7 @@ export const SingleTeam = ({team}: SingleTeamProps) => {
     const { mutate } = useUpdatePlayerMutation();
       
     const [isAddingPlayer, setIsAddingPlayer] = useState(false);
+    const [isEditingTeam, setIsEditingTeam] = useState(false);
     const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(null);  
 
     if(!players) return <p>Loading players...</p>;
@@ -21,6 +24,14 @@ export const SingleTeam = ({team}: SingleTeamProps) => {
     const handleAddPlayertoTeamClick = () => {
         setIsAddingPlayer(!isAddingPlayer);
     }
+
+    const handleEditTeamClick = () => {
+        setIsEditingTeam(true);
+    };
+
+    const closeEditTeam = () => {
+        setIsEditingTeam(false);
+    };
 
     const handlePlayerSelect = (playerId: string) => {
         setSelectedPlayerId(playerId);
@@ -52,6 +63,8 @@ export const SingleTeam = ({team}: SingleTeamProps) => {
             <h2><strong>{team.name}</strong></h2>
             <h3><strong>{team.yearofcreation}</strong></h3>
             <p>{team.city}</p>
+            <button onClick={handleEditTeamClick}>Edit Team</button>
+            {isEditingTeam && <EditTeam team={team} showEdit={closeEditTeam}/>}
             <button onClick={handleAddPlayertoTeamClick}>{isAddingPlayer ? 'Cancel' : 'Add Player to this team'}</button>
             {isAddingPlayer && (
                 <div>
