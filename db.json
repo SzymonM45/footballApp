@@ -2,9 +2,9 @@
   "players": [
     {
       "id": "szm024",
-      "name": "Szymon",
-      "lastname": "Mac",
-      "teamId": "1"
+      "name": "Szymon ",
+      "lastname": "Maciołek",
+      "teamId": ""
     },
     {
       "id": "rl024",
@@ -77,6 +77,46 @@
       "name": "Krychowiak",
       "lastname": "Jerzy",
       "teamId": ""
+    },
+    {
+      "id": "tk024",
+      "payload": {
+        "teamId": "",
+        "name": "",
+        "lastname": ""
+      }
+    },
+    {
+      "id": "tk024",
+      "payload": {
+        "teamId": "",
+        "name": "",
+        "lastname": ""
+      }
+    },
+    {
+      "id": "8deb",
+      "payload": {
+        "teamId": "4",
+        "name": "Kucharski",
+        "lastname": "Jacek"
+      }
+    },
+    {
+      "id": "8deb",
+      "payload": {
+        "teamId": "4",
+        "name": "Kucharski",
+        "lastname": "Jacek"
+      }
+    },
+    {
+      "id": "szm024",
+      "payload": {
+        "teamId": "",
+        "name": "",
+        "lastname": ""
+      }
     }
   ],
   "teams": [

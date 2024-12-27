@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useGetPlayersQuery } from "./queries/useGetPlayersQuery";
 import { useUpdatePlayerMutation } from "./queries/useUpdatePlayerMutation";
 import { TeamsEntity } from "./types"
-import { EditPlayer } from "./EditPlayer";
+
 import { EditTeam } from "./EditTeam";
 
 type SingleTeamProps = {
