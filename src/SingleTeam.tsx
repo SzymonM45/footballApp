@@ -4,6 +4,7 @@ import { useUpdatePlayerMutation } from "./queries/useUpdatePlayerMutation";
 import { TeamsEntity } from "./types"
 
 import { EditTeam } from "./EditTeam";
+import { useDeleteTeamMutation } from "./queries/useDeleteTeamMutation";
 
 type SingleTeamProps = {
     team: TeamsEntity;
@@ -12,10 +13,12 @@ type SingleTeamProps = {
 export const SingleTeam = ({team}: SingleTeamProps) => {
     const { data: players } = useGetPlayersQuery();
     const { mutate } = useUpdatePlayerMutation();
-      
+    const { mutate: deleteTeam, isPending: isDeletingTeam, error: deleteError } = useDeleteTeamMutation();
+   
     const [isAddingPlayer, setIsAddingPlayer] = useState(false);
     const [isEditingTeam, setIsEditingTeam] = useState(false);
     const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(null);  
+    const [confirmDelete, setConfirmDelete] = useState(false);
 
     if(!players) return <p>Loading players...</p>;
 
@@ -35,8 +38,7 @@ export const SingleTeam = ({team}: SingleTeamProps) => {
 
     const handlePlayerSelect = (playerId: string) => {
         setSelectedPlayerId(playerId);
-       
-        
+             
     }
 
     const handleConfirmAddingPlayer = () => {
@@ -55,15 +57,41 @@ export const SingleTeam = ({team}: SingleTeamProps) => {
             setSelectedPlayerId(null);
         }
     }
-};
 
+   
+};
+const handleDeleteTeamClick = () => {
+    setConfirmDelete(true);
+}
+
+const confirmDeleteTeam = () => {
+    deleteTeam(team.id);
+    setConfirmDelete(false)
+}
+
+const cancelDelete = () => {
+    setConfirmDelete(false);
+}
     return(
         <>
         <li>
             <h2><strong>{team.name}</strong></h2>
             <h3><strong>{team.yearofcreation}</strong></h3>
             <p>{team.city}</p>
+            <button onClick={handleDeleteTeamClick} disabled={isDeletingTeam}>
+                {isDeletingTeam? 'Deleting' : 'Delete Team'}
+            </button>
+            {confirmDelete && (
+                <div>
+                    <p>Are you sure you want to delete this team?</p>
+                    <button onClick={confirmDeleteTeam}>Yes</button>
+                    <button onClick={cancelDelete}>No</button>
+                </div>
+            )}
+            {deleteError && <p>Error: {deleteError.message}</p>}
             <button onClick={handleEditTeamClick}>Edit Team</button>
+          
+           
             {isEditingTeam && <EditTeam team={team} showEdit={closeEditTeam}/>}
             <button onClick={handleAddPlayertoTeamClick}>{isAddingPlayer ? 'Cancel' : 'Add Player to this team'}</button>
             {isAddingPlayer && (

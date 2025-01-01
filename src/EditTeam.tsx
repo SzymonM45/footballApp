@@ -81,7 +81,7 @@ export const EditTeam = ({team, showEdit }: EditTeamProps) => {
             <label htmlFor="city">City</label>
             <input type='text' name='city' id='city' value={values.city} onChange={handleChange}/>
             </div>
-        <button type='submit' disabled={isTeamUpdating}>Edit Player</button>
+        <button type='submit' disabled={isTeamUpdating}>Edit</button>
         <button onClick={handleCancel} disabled={isTeamUpdating}>Cancel</button>
 
         <h4>Team players</h4>

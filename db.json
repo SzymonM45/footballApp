@@ -4,7 +4,7 @@
       "id": "szm024",
       "name": "Szymon ",
       "lastname": "Maciołek",
-      "teamId": ""
+      "teamId": "2"
     },
     {
       "id": "rl024",
@@ -64,7 +64,7 @@
       "id": "8deb",
       "name": "Kucharski",
       "lastname": "Jacek",
-      "teamId": ""
+      "teamId": null
     },
     {
       "id": "ae75",
@@ -79,43 +79,11 @@
       "teamId": ""
     },
     {
-      "id": "tk024",
-      "payload": {
-        "teamId": "",
-        "name": "",
-        "lastname": ""
-      }
-    },
-    {
-      "id": "tk024",
-      "payload": {
-        "teamId": "",
-        "name": "",
-        "lastname": ""
-      }
-    },
-    {
       "id": "8deb",
       "payload": {
         "teamId": "4",
         "name": "Kucharski",
         "lastname": "Jacek"
-      }
-    },
-    {
-      "id": "8deb",
-      "payload": {
-        "teamId": "4",
-        "name": "Kucharski",
-        "lastname": "Jacek"
-      }
-    },
-    {
-      "id": "szm024",
-      "payload": {
-        "teamId": "",
-        "name": "",
-        "lastname": ""
       }
     }
   ],
@@ -151,10 +119,10 @@
       "city": "Gdańsk"
     },
     {
-      "id": "c310",
-      "name": "Naprzód Skórzec",
-      "yearofcreation": "2005",
-      "city": "Skórzec"
+      "id": "e568",
+      "name": "test",
+      "yearofcreation": "testst",
+      "city": "test"
     }
   ],
   "games": [
