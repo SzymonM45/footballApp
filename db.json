@@ -61,12 +61,6 @@
       "teamId": "1"
     },
     {
-      "id": "8deb",
-      "name": "Kucharski",
-      "lastname": "Jacek",
-      "teamId": null
-    },
-    {
       "id": "ae75",
       "name": "Rafał",
       "lastname": "Szybki",
@@ -80,11 +74,9 @@
     },
     {
       "id": "8deb",
-      "payload": {
-        "teamId": "4",
-        "name": "Kucharski",
-        "lastname": "Jacek"
-      }
+      "name": "Kucharski",
+      "lastname": "Jacek",
+      "teamId": ""
     }
   ],
   "teams": [
@@ -117,12 +109,6 @@
       "name": "Lechia Gdańsk",
       "yearofcreation": "1888",
       "city": "Gdańsk"
-    },
-    {
-      "id": "e568",
-      "name": "test",
-      "yearofcreation": "testst",
-      "city": "test"
     }
   ],
   "games": [
