@@ -17,13 +17,17 @@ export const DeleteTeamConfirmation = ({id, showDelete}: DeleteTeamConfirmationP
     const handleCancel = () => {
         showDelete()
     }
- 
 
+    
+ 
+  
 return (
     <div>
         <p> Do you really want to remove team?</p>
+   
         <button onClick={handleDelete}>Yes</button>
         <button onClick={handleCancel}>Cancel</button>
+        
     </div>
 )
 

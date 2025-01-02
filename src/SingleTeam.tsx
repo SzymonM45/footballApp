@@ -73,12 +73,8 @@ export const SingleTeam = ({team}: SingleTeamProps) => {
             <button onClick={handleDeleteTeamClick}> Delete Team       </button>
             {isDeletingTeam && (
                 <DeleteTeamConfirmation id={team.id} showDelete={handleDeleteTeamClick}/>
-                 
             )}
-            
-            
             <button onClick={handleEditTeamClick}>Edit Team</button>
-                
             {isEditingTeam && <EditTeam team={team} showEdit={closeEditTeam}/>}
             <button onClick={handleAddPlayertoTeamClick}>{isAddingPlayer ? 'Cancel' : 'Add Player to this team'}</button>
             {isAddingPlayer && (

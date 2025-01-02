@@ -82,7 +82,7 @@
       "id": "bb97",
       "name": "teest",
       "lastname": "test",
-      "teamId": "a4c7"
+      "teamId": "4058"
     }
   ],
   "teams": [
@@ -117,10 +117,10 @@
       "city": "Gdańsk"
     },
     {
-      "id": "a4c7",
+      "id": "4058",
       "name": "test",
       "yearofcreation": "test",
-      "city": "test"
+      "city": "Siedlce"
     }
   ],
   "games": [
@@ -145,6 +145,17 @@
       "idTeam2": "2",
       "goalsTeam1": 1,
       "goalsTeam2": 1
+    },
+    {
+      "id": "m3",
+      "matchdate": "2024-10-01",
+      "title": "1 round",
+      "place": "Warszawa",
+      "duration": "90 minutes",
+      "idTeam1": "4058",
+      "idTeam2": "4",
+      "goalsTeam1": 3,
+      "goalsTeam2": 0
     }
   ]
 }
