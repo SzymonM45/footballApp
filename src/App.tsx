@@ -25,7 +25,7 @@ export const App = () => {
     <div>
       {activeTab==='players' && <Players/> }
       {activeTab==='teams' && <Teams/>}
-      {activeTab==='games' && <Teams/>}
+      {activeTab==='games' && <Games/>}
       {activeTab === 'statistics' && <Statistics/>}
     </div>
     
