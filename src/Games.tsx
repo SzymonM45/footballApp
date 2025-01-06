@@ -1,6 +1,7 @@
+import { AddGame } from "./AddGame";
 import { useGetGamesQuery } from "./queries/useGetGamesQuery";
 import { useGetTeamsQuery } from "./queries/useGetTeamsQuery";
-import { SingleGame } from "./SingleGames";
+import { SingleGame } from "./SingleGame";
 
 export const Games = () => {
 const { data: games, isLoading: isGamesLoading, error: gamesError} = useGetGamesQuery()
@@ -13,6 +14,7 @@ const sortedGames = games?.slice().sort((a,b) => new Date(a.matchdate).getTime()
 return(
     <>
     <h2>Games</h2>
+    <AddGame/>
     <ul>
         {sortedGames?.map((game) => (
             <SingleGame  key={game.id} game={game} teams={teams}/>

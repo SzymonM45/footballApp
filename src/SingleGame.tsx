@@ -6,10 +6,17 @@ type SingleGameProps = {
     teams:TeamsEntity[];
 }
 export const SingleGame = ({game, teams} : SingleGameProps) => {
+
+   
+    
+    
     const team1 = teams.find((team) => team.id === game.idTeam1)?.name 
     const team2 = teams.find((team) => team.id === game.idTeam2)?.name 
 
     const titleWithTeams = `${game.title}: ${team1} - ${team2}`
+
+    console.log('Game:', game);
+    console.log('Teams:', teams);
     return (
         <li key={game.id}>
         <h3>{titleWithTeams}</h3>

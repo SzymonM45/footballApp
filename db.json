@@ -118,9 +118,15 @@
     },
     {
       "id": "4058",
+      "name": "Skórzec Naprzód",
+      "yearofcreation": "1995",
+      "city": "Skórzec"
+    },
+    {
+      "id": "16d4",
       "name": "test",
       "yearofcreation": "test",
-      "city": "Siedlce"
+      "city": "test"
     }
   ],
   "games": [
@@ -156,6 +162,17 @@
       "idTeam2": "4",
       "goalsTeam1": 3,
       "goalsTeam2": 2
+    },
+    {
+      "id": "01a0",
+      "title": "Champions League 3 round ",
+      "matchdate": "2025-01-01",
+      "place": "Skórzec",
+      "duration": "90",
+      "idTeam1": "Skórzec Naprzód",
+      "idTeam2": "Pogoń Siedlce",
+      "goalsTeam1": 1,
+      "goalsTeam2": 1
     }
   ]
 }

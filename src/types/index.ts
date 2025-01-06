@@ -13,10 +13,6 @@ export type TeamsEntity = {
     "city": string
 }
 
-export type PlayerDto = Omit<PlayerEntity, 'id'>
-
-export type TeamsDto = Omit<TeamsEntity, 'id'>
-
 export type GameEntity = {
     id: string;
     matchdate: string;
@@ -28,3 +24,9 @@ export type GameEntity = {
     goalsTeam1: number;
     goalsTeam2: number;
 };
+
+export type PlayerDto = Omit<PlayerEntity, 'id'>
+
+export type TeamsDto = Omit<TeamsEntity, 'id'>
+
+export type GameDto = Omit<GameEntity, 'id'>
