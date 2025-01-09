@@ -1,152 +1,146 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import React, { useMemo, useState } from "react";
+import { TeamsEntity } from "./types";
 import { useAddGameMutation } from "./queries/useAddGameMutation";
 
+interface AddGameProps {
+  teams: TeamsEntity[];
+}
 
-export const AddGame = () => {
-    const { mutate, isPending } = useAddGameMutation();
+export const AddGame = ({ teams = []}: AddGameProps) => {
+  const [gameDate, setgameDate] = useState({
+    title: "",
+    matchdate: "",
+    place: "",
+    duration: "",
+    idTeam1: "",
+    idTeam2: "",
+    goalsTeam1: 0,
+    goalsTeam2: 0,
+  });
+
+  const { mutate, isPending, error } = useAddGameMutation();
+
+  // Użycie useMemo dla opcji drużyn
+  const teamOptions = useMemo(() => {
+    console.log("Transforming teams into options...");
+    return teams.map((team) => ({
+      value: team.id,
+      label: team.name,
+    }));
+  }, [teams]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setgameDate((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (gameDate.idTeam1 === gameDate.idTeam2) {
+      alert("Teams must be different.");
+      return;
+    }
+    mutate(gameDate); // Wywołanie mutacji
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h3>Add Game</h3>
+
+  
+      <input
+        type="text"
+        name="title"
+        value={gameDate.title}
+        onChange={handleChange}
+        placeholder="Enter title"
+        required
+      />
+
+    
+      <input
+        type="date"
+        name="matchdate"
+        value={gameDate.matchdate}
+        onChange={handleChange}
+        required
+      />
+
    
+      <input
+        type="text"
+        name="place"
+        value={gameDate.place}
+        onChange={handleChange}
+        placeholder="Enter place"
+        required
+      />
 
-    // Stan komponentu
-    const [values, setValues] = useState({
-        matchdate: '',
-        title: '',
-        place: '',
-        duration: '',
-        idTeam1: '',
-        idTeam2: '',
-        goalsTeam1: '',
-        goalsTeam2: ''
-    });
+ 
+      <input
+        type="text"
+        name="duration"
+        value={gameDate.duration}
+        onChange={handleChange}
+        placeholder="Enter duration"
+        required
+      />
 
-    // Obsługa zmiany w polach formularza
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setValues(prevValues => ({
-            ...prevValues,
-            [name]: value
-        }));
-    };
+      <select
+        name="idTeam1"
+        value={gameDate.idTeam1}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select Team 1</option>
+        {teamOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
 
-    // Obsługa wysyłania formularza
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
+    
+      <select
+        name="idTeam2"
+        value={gameDate.idTeam2}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select Team 2</option>
+        {teamOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
 
-        // Walidacja
-        // if (!values.title.trim() || !values.matchdate.trim() || !values.idTeam1 || !values.idTeam2) {
-        //     alert(`All fields are required!`);
-        //     return;
-        // }
+     
+      <input
+        type="number"
+        name="goalsTeam1"
+        value={gameDate.goalsTeam1}
+        onChange={handleChange}
+        placeholder="Goals Team 1"
+        required
+      />
+      <input
+        type="number"
+        name="goalsTeam2"
+        value={gameDate.goalsTeam2}
+        onChange={handleChange}
+        placeholder="Goals Team 2"
+        required
+      />
 
-        // Wywołanie mutacji
-        mutate({
-            title: values.title,
-            matchdate: values.matchdate,
-            place: values.place,
-            duration: values.duration,
-            idTeam1: values.idTeam1,
-            idTeam2: values.idTeam2,
-            goalsTeam1: parseInt(values.goalsTeam1) || 0,
-            goalsTeam2: parseInt(values.goalsTeam2) || 0,
-        });
+      <button type="submit" disabled={isPending}>
+        {isPending ? "Adding..." : "Add Game"}
+      </button>
 
-        // Resetowanie stanu
-        setValues({
-            title: '',
-            matchdate: '',
-            place: '',
-            duration: '',
-            idTeam1: '',
-            idTeam2: '',
-            goalsTeam1: '',
-            goalsTeam2: ''
-        });
-    };
-
-    return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="title">Title</label>
-                <input 
-                    type="text" 
-                    name="title" 
-                    id="title" 
-                    value={values.title} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="matchdate">Match Date</label>
-                <input 
-                    type="date" 
-                    name="matchdate" 
-                    id="matchdate" 
-                    value={values.matchdate} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="place">Place</label>
-                <input 
-                    type="text" 
-                    name="place" 
-                    id="place" 
-                    value={values.place} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="duration">Duration</label>
-                <input 
-                    type="text" 
-                    name="duration" 
-                    id="duration" 
-                    value={values.duration} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="idTeam1">Team 1</label>
-                <input 
-                    type="text" 
-                    name="idTeam1" 
-                    id="idTeam1" 
-                    value={values.idTeam1} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="idTeam2">Team 2</label>
-                <input 
-                    type="text" 
-                    name="idTeam2" 
-                    id="idTeam2" 
-                    value={values.idTeam2} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="goalsTeam1">Goals Team 1</label>
-                <input 
-                    type="number" 
-                    name="goalsTeam1" 
-                    id="goalsTeam1" 
-                    value={values.goalsTeam1} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <div>
-                <label htmlFor="goalsTeam2">Goals Team 2</label>
-                <input 
-                    type="number" 
-                    name="goalsTeam2" 
-                    id="goalsTeam2" 
-                    value={values.goalsTeam2} 
-                    onChange={handleChange} 
-                />
-            </div>
-            <button type="submit" disabled={isPending}>
-                {isPending ? 'Adding...' : 'Add Game'}
-            </button>
-        </form>
-    );
+      {error && <p>Error: {error.message}</p>}
+    </form>
+  );
 };

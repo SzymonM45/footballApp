@@ -173,6 +173,72 @@
       "idTeam2": "Pogoń Siedlce",
       "goalsTeam1": 1,
       "goalsTeam2": 1
+    },
+    {
+      "id": "ba8a",
+      "title": "Champions League 3 round ",
+      "matchdate": "",
+      "place": "Skórzec",
+      "duration": "90",
+      "idTeam1": "gfg",
+      "idTeam2": "gfdg",
+      "goalsTeam1": 1,
+      "goalsTeam2": 1
+    },
+    {
+      "id": "9419",
+      "title": "Puchar Polski 1 round",
+      "matchdate": "2025-01-09",
+      "place": "Siedlce",
+      "duration": "90",
+      "idTeam1": "2",
+      "idTeam2": "1",
+      "goalsTeam1": "5",
+      "goalsTeam2": "1"
+    },
+    {
+      "id": "c34c",
+      "title": "Puchar Polski 1 round ",
+      "matchdate": "2025-01-09",
+      "place": "Lublin",
+      "duration": "90",
+      "idTeam1": "4",
+      "idTeam2": "4058",
+      "goalsTeam1": "3",
+      "goalsTeam2": "3"
+    },
+    {
+      "id": "fa1f",
+      "title": "Puchar Polski 1 round",
+      "matchdate": "2025-01-09",
+      "place": "Gdańsk",
+      "duration": "90",
+      "idTeam1": "d849",
+      "idTeam2": "3",
+      "goalsTeam1": 0,
+      "goalsTeam2": "3"
+    },
+    {
+      "id": "dede",
+      "title": "Puchar Polski 2 round",
+      "matchdate": "2025-01-16",
+      "place": "Lublin",
+      "duration": "90",
+      "idTeam1": "4",
+      "idTeam2": "2",
+      "goalsTeam1": "3",
+      "goalsTeam2": "3"
+    },
+    {
+      "id": "6396",
+      "title": "Puchar Polski 2 round",
+      "matchdate": "2025-01-16",
+      "place": "test",
+      "duration": "test",
+      "idTeam1": "16d4",
+      "idTeam2": "1",
+      "goalsTeam1": 0,
+      "goalsTeam2": 0
     }
   ]
 }
