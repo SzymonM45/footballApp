@@ -5,10 +5,11 @@ import { GameEntity, TeamsEntity } from "./types";
 type EditGameProps = {
   game: GameEntity;
   teams: TeamsEntity[];
-  showEdit: () => void; // Funkcja do pokazania/ukrycia formularza edycji
+  onSave: (updatedGame: GameEntity) => void;
+  onCancel: () => void
 };
 
-export const EditGame = ({ game, teams, showEdit }: EditGameProps) => {
+export const EditGame = ({ game, teams, onSave, onCancel}: EditGameProps) => {
   const { isPending, error, mutate: updateGame } = useUpdateGameMutation();
 
   const [values, setValues] = useState({
@@ -31,28 +32,33 @@ export const EditGame = ({ game, teams, showEdit }: EditGameProps) => {
   };
 
   const handleCancle = () => {
-    showEdit(); // Przełącza tryb edycji
+    onCancel(); // Przełącza tryb edycji
   };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    console.log("Form submitted, preventDefault called.");
 
+    const updatedGame = {
+      ...game,
+    title: values.title,
+    matchdate: values.matchdate,
+    place: values.place,
+    duration: values.duration,
+    idTeam1: values.idTeam1,
+    idTeam2: values.idTeam2,
+    goalsTeam1: Number(values.goalsTeam1),
+    goalsTeam2: Number(values.goalsTeam2),
+    }
+    
     updateGame({
       id: game.id,
-      payload: {
-        title: values.title,
-        matchdate: values.matchdate,
-        place: values.place,
-        duration: values.duration,
-        idTeam1: values.idTeam1,
-        idTeam2: values.idTeam2,
-        goalsTeam1: Number(values.goalsTeam1),
-        goalsTeam2: Number(values.goalsTeam2),
-      },
+      payload: updatedGame,
     });
+    onSave(updatedGame)
   };
 
-  if (isPending) return <p>Loading...</p>;
+  if (isPending) return <p>Saving...</p>;
   if (error) return <p>{error.message}</p>;
 
   return (
@@ -148,7 +154,7 @@ export const EditGame = ({ game, teams, showEdit }: EditGameProps) => {
         />
       </div>
       <button type="submit" disabled={isPending}>
-        Save Changes
+        Save
       </button>
       <button type="button" onClick={handleCancle} disabled={isPending}>
         Cancel

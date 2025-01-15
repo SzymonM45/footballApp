@@ -138,8 +138,8 @@
       "duration": "90 minutes",
       "idTeam1": "1",
       "idTeam2": "4",
-      "goalsTeam1": 2,
-      "goalsTeam2": 0
+      "goalsTeam1": 5,
+      "goalsTeam2": 2
     },
     {
       "id": "m2",
@@ -174,17 +174,7 @@
       "goalsTeam1": 1,
       "goalsTeam2": 1
     },
-    {
-      "id": "ba8a",
-      "title": "Champions League 3 round ",
-      "matchdate": "",
-      "place": "Skórzec",
-      "duration": "90",
-      "idTeam1": "gfg",
-      "idTeam2": "gfdg",
-      "goalsTeam1": 1,
-      "goalsTeam2": 1
-    },
+
     {
       "id": "9419",
       "title": "Puchar Polski 1 round",
@@ -196,28 +186,8 @@
       "goalsTeam1": "5",
       "goalsTeam2": "1"
     },
-    {
-      "id": "c34c",
-      "title": "Puchar Polski 1 round ",
-      "matchdate": "2025-01-09",
-      "place": "Lublin",
-      "duration": "90",
-      "idTeam1": "4",
-      "idTeam2": "4058",
-      "goalsTeam1": "3",
-      "goalsTeam2": "3"
-    },
-    {
-      "id": "fa1f",
-      "title": "Puchar Polski 1 round",
-      "matchdate": "2025-01-09",
-      "place": "Gdańsk",
-      "duration": "90",
-      "idTeam1": "d849",
-      "idTeam2": "3",
-      "goalsTeam1": 0,
-      "goalsTeam2": "3"
-    },
+
+    
     {
       "id": "dede",
       "title": "Puchar Polski 2 round",
@@ -239,6 +209,22 @@
       "idTeam2": "1",
       "goalsTeam1": 2,
       "goalsTeam2": 0
+    },
+
+
+   
+     {
+      "id": "e0f1",
+      "title": "ftest",
+      "matchdate": "2025-01-15",
+      "place": "test",
+      "duration": "test",
+      "idTeam1": "1",
+      "idTeam2": "4",
+      "goalsTeam1": 0,
+      "goalsTeam2": 0
     }
+
+ 
   ]
 }

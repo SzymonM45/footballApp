@@ -1,16 +1,13 @@
+
 import { AddGame } from "./AddGame";
 import { useGetGamesQuery } from "./queries/useGetGamesQuery";
 import { useGetTeamsQuery } from "./queries/useGetTeamsQuery";
-import { useUpdateGameMutation } from "./queries/useUpdateGameMutation";
+
 import { SingleGame } from "./SingleGame";
 
 export const Games = () => {
 const { data: games, isLoading: isGamesLoading, error: gamesError} = useGetGamesQuery()
 const {data: teams, isFetching: isTeamsLoading, error: teamsError} = useGetTeamsQuery()
-const {mutate: updateGame} = useUpdateGameMutation()
-console.log("Games Component Rendered");
-console.log("Games data:", games);
-console.log("Teams data:", teams);
 
 if(isGamesLoading || isTeamsLoading) {
 console.log("Loading state active..."); 
@@ -31,10 +28,10 @@ console.log("Sorted Games:", sortedGames);
 return(
     <>
     <h2>Games</h2>
-    <AddGame teams={teams}/>
+    <AddGame teams={teams || []}/>
     <ul>
         {sortedGames?.map((game) => (
-         teams ?   <SingleGame  key={game.id} game={game} teams={teams}/> : null
+         teams ?   <SingleGame  key={game.id} game={game} teams={teams || []}/> : null
             ))}
     </ul>
     

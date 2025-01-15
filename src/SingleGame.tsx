@@ -7,7 +7,7 @@ import { EditGame } from "./EditGame";
 type SingleGameProps = {
     game: GameEntity;
     teams:TeamsEntity[];
-    onUpdate: (updatedGame: GameEntity) => void
+    onUpdate?: (updatedGame: GameEntity) => void
 }
 export const SingleGame = ({game, teams} : SingleGameProps) => {
     const [isEditing, setIsEditing] = useState(false)

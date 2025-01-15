@@ -13,6 +13,7 @@ export const useUpdateGameMutation = () => {
       return apiPut<GameEntity, GameDto>(`games/${id}`, payload);
     },
     onSuccess: () => {
+      console.log('Mutation successful. Invalidating games query...');
       // Odświeżenie zapytania 'games' po powodzeniu mutacji
       queryClient.invalidateQueries({
         queryKey: ['games'],
