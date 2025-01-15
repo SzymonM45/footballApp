@@ -1,11 +1,13 @@
 import { AddGame } from "./AddGame";
 import { useGetGamesQuery } from "./queries/useGetGamesQuery";
 import { useGetTeamsQuery } from "./queries/useGetTeamsQuery";
+import { useUpdateGameMutation } from "./queries/useUpdateGameMutation";
 import { SingleGame } from "./SingleGame";
 
 export const Games = () => {
 const { data: games, isLoading: isGamesLoading, error: gamesError} = useGetGamesQuery()
 const {data: teams, isFetching: isTeamsLoading, error: teamsError} = useGetTeamsQuery()
+const {mutate: updateGame} = useUpdateGameMutation()
 console.log("Games Component Rendered");
 console.log("Games data:", games);
 console.log("Teams data:", teams);
