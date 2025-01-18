@@ -29,8 +29,6 @@ export const App = () => {
       {activeTab === 'statistics' && <Statistics/>}
     </div>
     
-   
-
     </>
     </QueryClientProvider>
 }

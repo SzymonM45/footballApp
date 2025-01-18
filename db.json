@@ -138,7 +138,7 @@
       "duration": "90 minutes",
       "idTeam1": "1",
       "idTeam2": "4",
-      "goalsTeam1": 5,
+      "goalsTeam1": 0,
       "goalsTeam2": 2
     },
     {
@@ -169,12 +169,11 @@
       "matchdate": "2025-01-01",
       "place": "Skórzec",
       "duration": "90",
-      "idTeam1": "Skórzec Naprzód",
-      "idTeam2": "Pogoń Siedlce",
-      "goalsTeam1": 1,
+      "idTeam1": "2",
+      "idTeam2": "1",
+      "goalsTeam1": 2,
       "goalsTeam2": 1
     },
-
     {
       "id": "9419",
       "title": "Puchar Polski 1 round",
@@ -186,8 +185,6 @@
       "goalsTeam1": "5",
       "goalsTeam2": "1"
     },
-
-    
     {
       "id": "dede",
       "title": "Puchar Polski 2 round",
@@ -210,10 +207,7 @@
       "goalsTeam1": 2,
       "goalsTeam2": 0
     },
-
-
-   
-     {
+    {
       "id": "e0f1",
       "title": "ftest",
       "matchdate": "2025-01-15",
@@ -223,8 +217,17 @@
       "idTeam2": "4",
       "goalsTeam1": 0,
       "goalsTeam2": 0
+    },
+    {
+      "id": "a92a",
+      "title": "Puchar Polski 4 runda",
+      "matchdate": "2025-01-18",
+      "place": "Warszawa",
+      "duration": "90 minutes",
+      "idTeam1": "1",
+      "idTeam2": "d849",
+      "goalsTeam1": "3",
+      "goalsTeam2": 0
     }
-
- 
   ]
 }
