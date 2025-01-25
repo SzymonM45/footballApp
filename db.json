@@ -228,6 +228,28 @@
       "idTeam2": "d849",
       "goalsTeam1": "3",
       "goalsTeam2": 0
+    },
+    {
+      "id": "fb5e",
+      "title": "Puchar Polski 4 round",
+      "matchdate": "2025-01-18",
+      "place": "Warszawa",
+      "duration": "90",
+      "idTeam1": "2",
+      "idTeam2": "1",
+      "goalsTeam1": 0,
+      "goalsTeam2": 0
+    },
+    {
+      "id": "298c",
+      "title": "Puchar Polski 5 round",
+      "matchdate": "2025-01-25",
+      "place": "Siedlce",
+      "duration": "90",
+      "idTeam1": "2",
+      "idTeam2": "d849",
+      "goalsTeam1": "2",
+      "goalsTeam2": 0
     }
   ]
 }

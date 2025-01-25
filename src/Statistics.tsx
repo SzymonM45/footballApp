@@ -1,6 +1,8 @@
+import { GameChart } from "./GamesChart";
 import { LastGame } from "./LastGame";
 import { useGetGamesQuery } from "./queries/useGetGamesQuery";
 import { useGetTeamsQuery } from "./queries/useGetTeamsQuery";
+import { TopTeams } from "./TopTeam";
 
 
 export const Statistics = () => {
@@ -24,6 +26,8 @@ export const Statistics = () => {
         <>
         <h2>Statistics</h2>
         <LastGame lastGame={lastGame} teams={teams}/>
+        <GameChart games={games}/>
+        <TopTeams games={games} teams={teams}/>
         </>
     )
 }
